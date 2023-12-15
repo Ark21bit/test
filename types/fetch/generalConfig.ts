@@ -1,3 +1,5 @@
+import type { TimetableInfo } from "./timetable";
+
 export interface GeneralConfig {
     products: Products;
     structure: any[];
@@ -63,8 +65,13 @@ export interface Contact {
     office_info: OfficeInfo;
     number_rto: NumberRto;
     socials: Socials;
-    departure_points: string[];
+    departure_points: departure_pointsData[];
     company_details: string;
+}
+
+export interface departure_pointsData {
+    url:string;
+    title:string;
 }
 
 export interface OfficeInfo {
@@ -150,8 +157,6 @@ export interface GlobalWords {
     you_mark: string;
     fio: string;
     excursion: string;
-    total: string;
-    order_certificate: string;
     email_text: string;
     recommendations: string;
     date: string;
@@ -235,6 +240,36 @@ export interface GlobalWords {
     hide_more_details: string;
     more_excursions: string;
     timetable_on: string;
+    total: string;
+    order_certificate: string;
+    circular_photo_panorama: string;
+    video_reviews_ou_tourists: string;
+    brief_audio_tour: string;
+    radio_guide: string;
+    yes_free: string;
+    partner: string;
+    route: string;
+    similar_excursions: string;
+    congratulations: string;
+    waiting_call_manager: string;
+    more_excursion: string;
+    choose_an_excursion: string;
+    send_request_to_indiv_excursion: string;
+    leave_your_review: string;
+    close: string;
+    welcome_excursion_center_the_city: string;
+    sale_text: string;
+    count_reviews: string;
+    find_suitable_excursion: string;
+    submit_request_private: string;
+    message: string;
+    email_en: string;
+    find_out_more: string;
+    read_reviews_our_clients: string;
+    reservation_a_place: string;
+    guide_loudspeaker: string;
+    confirm_excursion_info: string
+    confirm_personal_data: string
 }
 export interface TimeText {
     short_h: string;
@@ -270,5 +305,5 @@ export interface VisitTatarstan {
 }
 
 export interface Timetable {
-    today: any[];
+    today: TimetableInfo[];
 }

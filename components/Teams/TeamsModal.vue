@@ -10,16 +10,17 @@
                 <p class="text-#A8A8A8">{{ team?.post }}</p>
             </div>
         </div>
-        <!-- <NuxtLink v-if="team?.email" :to="`mailto:${team.email}`" class="flex gap-1.75 items-center text-primary text-sm leading-1.4 mt-3">
+        <NuxtLink v-if="team?.email" :to="`mailto:${team.email}`" class="flex gap-1.75 items-center text-primary text-sm leading-1.4 mt-3">
             <Icon name="Mail" class="text-lg"></Icon> {{ team.email }}
-        </NuxtLink> -->
-        <!-- <p class="text-fblack text-base leading-1.2 mt-5">{{ team?.description }}</p> -->
-        <Button @click="closeModal" class="mx-auto w-48 mt-7.5" variant="outline">Закрыть</Button>
+        </NuxtLink>
+        <p class="text-fblack text-base leading-1.2 mt-5">{{ team?.about }}</p>
+        <Button @click="closeModal" class="mx-auto w-48 mt-7.5" variant="outline">{{generalConfig?.static_info?.global_words?.close }}</Button>
     </Modal>
 </template>
 
 <script setup lang="ts">
 import type { TeamsDatum } from '~/types/fetch/about';
+const { generalConfig } = storeToRefs(useGeneralConfigStore())
 
 const emit = defineEmits(['close'])
 const { closeModal, isModalShow, openModal } = useModal()

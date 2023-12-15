@@ -23,15 +23,30 @@ body.modal-open-mobile {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, box-shadow;
 }
 
-.bg1{
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), url(/imgs/img2.png)
-}
-
-.index__slider-img>img{
+.index__slider-img-container{
     mask-image:url(/sliderBg.svg);
     mask-repeat: no-repeat;
     mask-position: bottom;
     mask-size: cover;
+}
+
+.more-text-block{
+    --at-apply:'flex flex-col gap-7.5 lg:gap-10 text-sm lg:text-base leading-1.4 lg:leading-1.4 text-second'
+}
+.more-text-block b{
+    --at-apply:'text-fblack font-semibold'
+}
+.more-text-block h2{
+    --at-apply:'font-bold font-Montserrat text-fblack text-lg lg:text-xl leading-1.2 lg:leading-1.2'
+}
+.more-text-block>div{
+    --at-apply:'flex flex-col gap-4 lg:gap-5'
+}
+.more-text-block ul>li{
+    --at-apply:'flex before:(content-empty w-1 h-1 bg-current mx-2.5 rounded-full mt-0.5em shrink-0)'
+}
+.more-text-block ul>li>*{
+    --at-apply:'contents'
 }
 
 @layer default{
@@ -64,14 +79,24 @@ body.modal-open-mobile {
         max-height: 0;
     }
 
+    .swiper-button{
+        --at-apply:"flex rounded-full transition-colors duration-500 ease-linear pointer-events-auto"
+    }
+    .swiper-button.swiper-button-lock{
+        --at-apply:"hidden"
+    }
+
     .swiper-pagination{
         --at-apply:"flex gap-2 justify-center items-center flex-wrap"
     }
 
     .swiper-pagination .swiper-pagination-bullet{
-        --at-apply:"w-2.5 h-2.5 bg-#E9E9E9 rounded-full transition-colors hover:bg-primary cursor-pointer"
+        --at-apply:"w-2.5 h-2.5 bg-[--pagination-bullet-color,#fff] rounded-full transition-colors hover:bg-primary cursor-pointer"
     }
     .swiper-pagination .swiper-pagination-bullet-active{
         --at-apply:"bg-primary"
+    }
+    .swiper-pagination-lock, .swiper-pagination-disabled {
+        --at-apply:"hidden"
     }
 }

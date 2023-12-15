@@ -26,6 +26,7 @@ export default {
             props: [
                 'autoApply',
                 'minDate',
+                'maxDate',
                 'locale',
                 'ignoreTimeValidation',
                 'allowedDates',
@@ -33,7 +34,8 @@ export default {
                 'clearable',
                 'monthNameFormat',
                 'timezone',
-                'placeholder'
+                'placeholder',
+                'teleport'
             ]
         }),
         ratingC: createInput(rating, {
